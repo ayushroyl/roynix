@@ -4,55 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROYNIX - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Background Animation -->
-    <div class="background-animation"></div>
+    <!-- Background Particles -->
+    <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+    <div class="particle" style="top: 30%; left: 70%; animation-delay: 2s;"></div>
+    <div class="particle" style="top: 60%; left: 40%; animation-delay: 4s;"></div>
+    <div class="particle" style="top: 80%; left: 10%; animation-delay: 6s;"></div>
 
-    <!-- Main Content -->
+    <!-- Main Container -->
     <div class="container">
-        <div class="content">
-            <h1 class="glitch" data-text="ROYNIX">ROYNIX</h1>
-            <h2>Launching Soon</h2>
-            <p>Stay tuned for an innovative software experience.</p>
-            <div id="countdown">
-                <div>
-                    <span id="days">00</span>
-                    <p>Days</p>
-                </div>
-                <div>
-                    <span id="hours">00</span>
-                    <p>Hours</p>
-                </div>
-                <div>
-                    <span id="minutes">00</span>
-                    <p>Minutes</p>
-                </div>
-                <div>
-                    <span id="seconds">00</span>
-                    <p>Seconds</p>
-                </div>
+        <h1>ROYNIX</h1>
+        <h2>Something amazing is launching soon!</h2>
+        <!-- Countdown Timer -->
+        <div id="countdown">
+            <div>
+                <span id="days">00</span>
+                <p>Days</p>
             </div>
-            <div class="progress-bar">
-                <div class="progress"></div>
+            <div>
+                <span id="hours">00</span>
+                <p>Hours</p>
             </div>
-            <p>Follow us for updates:</p>
-            <p>+917255071097</p>
-            <p>ayushroy0753@gmail.com</p>
-            <div class="social-links">
-                <a href="https://facebook.com/ayushroyll">Facebook</a>
-                <a href="https://instagram.com/ayushroyl">Instagram</a>
-                <a href="https://x.com/ayushroyl">Twitter</a>
+            <div>
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <div>
+                <span id="seconds">00</span>
+                <p>Seconds</p>
             </div>
         </div>
+        <!-- Notify Button -->
+        <button id="notify">Notify Me</button>
     </div>
-    <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-<div class="particle" style="top: 30%; left: 70%; animation-delay: 2s;"></div>
-<div class="particle" style="top: 60%; left: 40%; animation-delay: 4s;"></div>
-<div class="particle" style="top: 80%; left: 10%; animation-delay: 6s;"></div>
 
+    <!-- Footer -->
+    <footer>
+        © 2024 ROYNIX | All rights reserved
+    </footer>
 
-    <script src="script.js"></script>
+    <!-- Countdown Script -->
+    <script>
+        const countdown = () => {
+            const launchDate = new Date("2025-01-01T00:00:00").getTime();
+            const now = new Date().getTime();
+            const gap = launchDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const days = Math.floor(gap / day);
+            const hours = Math.floor((gap % day) / hour);
+            const minutes = Math.floor((gap % hour) / minute);
+            const seconds = Math.floor((gap % minute) / second);
+
+            document.getElementById("days").innerText = days < 10 ? `0${days}` : days;
+            document.getElementById("hours").innerText = hours < 10 ? `0${hours}` : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? `0${minutes}` : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? `0${seconds}` : seconds;
+        };
+
+        setInterval(countdown, 1000);
+    </script>
 </body>
 </html>
