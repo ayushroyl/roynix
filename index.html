@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roynix - Coming Soon</title>
+    <title>Roynix - Big Surprise Coming Soon</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
@@ -15,71 +15,40 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: #0f0f0f;
+            background: linear-gradient(135deg, #0f0f0f, #141414, #0f0f0f);
             color: #ffffff;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, p {
-            text-align: center;
-            margin: 0;
-            padding: 10px 0;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #00ff7f;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #ffffff;
-            opacity: 0.8;
-        }
-
-        p {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-
-        /* Background Particles */
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
             overflow: hidden;
         }
 
-        .particle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #00ff7f;
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: float 8s infinite;
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            color: #00ff7f;
+            margin-top: 10vh;
+            text-align: center;
+            animation: pulse 2s infinite;
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-50px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 10px;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Countdown Timer */
-        #countdown {
+        .big-surprise {
+            font-size: 2.5rem;
+            color: #ff4500;
+            text-align: center;
+            margin: 50px 0;
+            animation: flicker 1.5s infinite;
+        }
+
+        .countdown {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin: 40px 0;
         }
 
         .time {
@@ -89,40 +58,20 @@
 
         .time span {
             display: block;
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #00ff7f;
+            text-shadow: 0 0 10px #00ff7f;
         }
 
         .time p {
-            font-size: 1rem;
-        }
-
-        /* Services Section */
-        .services {
-            margin: 30px auto;
-            text-align: center;
-        }
-
-        .services h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #00ff7f;
-        }
-
-        .services ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .services li {
-            margin: 10px 0;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            opacity: 0.8;
         }
 
         /* Contact Section */
         .contact {
-            margin-top: 20px;
+            margin: 40px auto;
             text-align: center;
         }
 
@@ -132,7 +81,7 @@
             font-weight: 500;
             margin: 0 10px;
             display: inline-block;
-            font-size: 1rem;
+            font-size: 1.2rem;
             transition: color 0.3s ease;
         }
 
@@ -143,30 +92,75 @@
         /* Footer */
         footer {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 0.9rem;
             opacity: 0.7;
         }
 
-        /* Responsive Design */
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 5px #00ff7f, 0 0 10px #00ff7f, 0 0 20px #00ff7f;
+            }
+            50% {
+                text-shadow: 0 0 20px #00ff7f, 0 0 30px #00ff7f, 0 0 50px #00ff7f;
+            }
+            100% {
+                text-shadow: 0 0 5px #00ff7f, 0 0 10px #00ff7f, 0 0 20px #00ff7f;
+            }
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #00ff7f;
+            border-radius: 50%;
+            animation: float 6s infinite;
+        }
+
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
-            h2 {
-                font-size: 1.2rem;
+            .time span {
+                font-size: 2rem;
             }
 
-            #countdown .time span {
-                font-size: 1.5rem;
-            }
-
-            .services h3 {
-                font-size: 1.2rem;
-            }
-
-            .services li {
+            .contact a {
                 font-size: 1rem;
             }
         }
@@ -176,18 +170,20 @@
     <!-- Background Particles -->
     <div class="background">
         <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="top: 30%; left: 70%; animation-delay: 2s;"></div>
-        <div class="particle" style="top: 60%; left: 40%; animation-delay: 4s;"></div>
-        <div class="particle" style="top: 80%; left: 10%; animation-delay: 6s;"></div>
+        <div class="particle" style="top: 30%; left: 70%; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 60%; left: 40%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 80%; left: 10%; animation-delay: 3s;"></div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Content -->
     <div class="container">
         <h1>ROYNIX</h1>
-        <h2>A software solution for Web Development, App Development, AI, and much more!</h2>
+        <h2>Something big is coming your way!</h2>
+
+        <div class="big-surprise">🎉 A BIG SURPRISE 🎉</div>
 
         <!-- Countdown Timer -->
-        <div id="countdown">
+        <div class="countdown" id="countdown">
             <div class="time">
                 <span id="days">00</span>
                 <p>Days</p>
@@ -206,22 +202,11 @@
             </div>
         </div>
 
-        <!-- Services -->
-        <div class="services">
-            <h3>Our Services</h3>
-            <ul>
-                <li>Web Development</li>
-                <li>App Development</li>
-                <li>Artificial Intelligence</li>
-                <li>And more...</li>
-            </ul>
-        </div>
-
         <!-- Contact Information -->
         <div class="contact">
             <p>Contact us:</p>
             <p>Phone: <a href="tel:+917255071097">+917255071097</a> | Email: <a href="mailto:ayushroy0753@gmail.com">ayushroy0753@gmail.com</a></p>
-            <p>Follow us on:</p>
+            <p>Follow us:</p>
             <a href="https://instagram.com/ayushroyl" target="_blank">Instagram</a>
             <a href="https://facebook.com/ayushroyll" target="_blank">Facebook</a>
             <a href="https://twitter.com/ayushroyl" target="_blank">Twitter</a>
@@ -233,7 +218,7 @@
         © 2024 Roynix. All rights reserved.
     </footer>
 
-    <!-- Countdown Timer Script -->
+    <!-- Countdown Script -->
     <script>
         const countdown = () => {
             const launchDate = new Date("2025-01-01T00:00:00").getTime();
@@ -256,7 +241,7 @@
             document.getElementById("seconds").innerText = seconds;
 
             if (gap < 0) {
-                document.getElementById("countdown").innerHTML = "<p>We're Live!</p>";
+                document.getElementById("countdown").innerHTML = "<p>🎉 We're Live! 🎉</p>";
             }
         };
 
