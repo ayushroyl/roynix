@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roynix - Big Surprise Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Roynix - Big Surprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
         * {
@@ -14,111 +14,130 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f0f0f, #141414, #0f0f0f);
-            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
             overflow: hidden;
         }
 
-        h1 {
-            font-size: 4rem;
-            text-transform: uppercase;
-            color: #00ff7f;
-            margin-top: 10vh;
+        /* Main Section */
+        .container {
             text-align: center;
-            animation: pulse 2s infinite;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 300;
-            text-align: center;
-            margin-top: 10px;
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #00c6ff;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
             color: rgba(255, 255, 255, 0.7);
         }
 
-        .big-surprise {
-            font-size: 2.5rem;
-            color: #ff4500;
-            text-align: center;
-            margin: 50px 0;
-            animation: flicker 1.5s infinite;
+        .surprise {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #ffcc00;
+            animation: pulse 2s infinite;
         }
 
+        /* Countdown Timer */
         .countdown {
             display: flex;
-            justify-content: center;
-            margin: 40px 0;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
         }
 
         .time {
+            flex: 1;
             text-align: center;
-            margin: 0 15px;
         }
 
         .time span {
             display: block;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #00ff7f;
-            text-shadow: 0 0 10px #00ff7f;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00c6ff;
+            text-shadow: 0 0 10px #00c6ff;
         }
 
         .time p {
-            font-size: 1.2rem;
-            opacity: 0.8;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Contact Section */
         .contact {
-            margin: 40px auto;
+            margin: 20px 0;
             text-align: center;
         }
 
+        .contact p {
+            margin-bottom: 10px;
+        }
+
         .contact a {
-            color: #00ff7f;
+            color: #00c6ff;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
             margin: 0 10px;
-            display: inline-block;
-            font-size: 1.2rem;
             transition: color 0.3s ease;
         }
 
         .contact a:hover {
-            color: #00cc66;
+            color: #0096c7;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.9rem;
-            opacity: 0.7;
+        /* Background Animation */
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #00c6ff;
+            border-radius: 50%;
+            animation: float 6s infinite linear;
         }
 
         /* Animations */
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 5px #00ff7f, 0 0 10px #00ff7f, 0 0 20px #00ff7f;
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
             }
-            50% {
-                text-shadow: 0 0 20px #00ff7f, 0 0 30px #00ff7f, 0 0 50px #00ff7f;
-            }
-            100% {
-                text-shadow: 0 0 5px #00ff7f, 0 0 10px #00ff7f, 0 0 20px #00ff7f;
+            to {
+                text-shadow: 0 0 20px #00c6ff, 0 0 30px #00c6ff;
             }
         }
 
-        @keyframes flicker {
-            0% {
-                opacity: 1;
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
             }
             50% {
-                opacity: 0.6;
-            }
-            100% {
-                opacity: 1;
+                transform: scale(1.1);
             }
         }
 
@@ -134,34 +153,21 @@
             }
         }
 
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #00ff7f;
-            border-radius: 50%;
-            animation: float 6s infinite;
-        }
-
         @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
+            .title {
+                font-size: 2.5rem;
             }
 
-            .time span {
-                font-size: 2rem;
-            }
-
-            .contact a {
+            .subtitle {
                 font-size: 1rem;
+            }
+
+            .countdown {
+                flex-direction: column;
+            }
+
+            .time {
+                margin-bottom: 15px;
             }
         }
     </style>
@@ -170,17 +176,16 @@
     <!-- Background Particles -->
     <div class="background">
         <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="top: 30%; left: 70%; animation-delay: 1s;"></div>
-        <div class="particle" style="top: 60%; left: 40%; animation-delay: 2s;"></div>
-        <div class="particle" style="top: 80%; left: 10%; animation-delay: 3s;"></div>
+        <div class="particle" style="top: 30%; left: 70%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 60%; left: 40%; animation-delay: 4s;"></div>
+        <div class="particle" style="top: 80%; left: 10%; animation-delay: 6s;"></div>
     </div>
 
     <!-- Content -->
     <div class="container">
-        <h1>ROYNIX</h1>
-        <h2>Something big is coming your way!</h2>
-
-        <div class="big-surprise">🎉 A BIG SURPRISE 🎉</div>
+        <h1 class="title">Roynix</h1>
+        <p class="subtitle">Something Big Is Coming!</p>
+        <div class="surprise">🎉 BIG SURPRISE 🎉</div>
 
         <!-- Countdown Timer -->
         <div class="countdown" id="countdown">
@@ -204,19 +209,15 @@
 
         <!-- Contact Information -->
         <div class="contact">
-            <p>Contact us:</p>
-            <p>Phone: <a href="tel:+917255071097">+917255071097</a> | Email: <a href="mailto:ayushroy0753@gmail.com">ayushroy0753@gmail.com</a></p>
-            <p>Follow us:</p>
+            <p>Contact Us:</p>
+            <p>Phone: <a href="tel:+917255071097">+91 7255071097</a></p>
+            <p>Email: <a href="mailto:ayushroy0753@gmail.com">ayushroy0753@gmail.com</a></p>
+            <p>Follow Us:</p>
             <a href="https://instagram.com/ayushroyl" target="_blank">Instagram</a>
             <a href="https://facebook.com/ayushroyll" target="_blank">Facebook</a>
             <a href="https://twitter.com/ayushroyl" target="_blank">Twitter</a>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        © 2024 Roynix. All rights reserved.
-    </footer>
 
     <!-- Countdown Script -->
     <script>
