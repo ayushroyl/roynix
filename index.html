@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roynix - Big Surprise</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Roynix - Pre-Launching</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
         * {
@@ -14,78 +15,92 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
-            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            background: #000;
+            color: #00ff99;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            overflow: hidden;
         }
 
-        /* Main Section */
+        /* Background Animation */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .matrix {
+            font-size: 14px;
+            color: rgba(0, 255, 153, 0.1);
+            animation: scroll 5s linear infinite;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(100%);
+            }
+        }
+
+        .matrix:nth-child(odd) {
+            animation-duration: 4.5s;
+        }
+
+        /* Main Container */
         .container {
             text-align: center;
+            z-index: 1;
             padding: 20px;
             width: 90%;
-            max-width: 500px;
+            max-width: 400px;
         }
 
         .title {
-            font-size: 3rem;
-            font-weight: bold;
-            text-transform: uppercase;
+            font-size: 2.5rem;
+            color: #00ff99;
+            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
             margin-bottom: 20px;
-            color: #00c6ff;
-            animation: glow 1.5s infinite alternate;
+            animation: flicker 1.5s infinite alternate;
         }
 
         .subtitle {
             font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(0, 255, 153, 0.8);
+            margin-bottom: 30px;
         }
 
-        .surprise {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            color: #ffcc00;
-            animation: pulse 2s infinite;
-        }
-
-        /* Countdown Timer */
         .countdown {
             display: flex;
             justify-content: space-between;
-            width: 100%;
-            max-width: 400px;
-            margin: 20px auto;
+            margin-bottom: 40px;
+            font-size: 1.5rem;
+            text-shadow: 0 0 5px #00ff99;
         }
 
-        .time {
+        .countdown div {
             flex: 1;
             text-align: center;
         }
 
-        .time span {
+        .countdown div span {
             display: block;
             font-size: 2rem;
             font-weight: bold;
-            color: #00c6ff;
-            text-shadow: 0 0 10px #00c6ff;
+            color: #00ffcc;
         }
 
-        .time p {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Contact Section */
         .contact {
-            margin: 20px 0;
-            text-align: center;
+            margin-top: 20px;
         }
 
         .contact p {
@@ -93,117 +108,73 @@
         }
 
         .contact a {
-            color: #00c6ff;
+            color: #00ff99;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 1rem;
             margin: 0 10px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .contact a:hover {
-            color: #0096c7;
-        }
-
-        /* Background Animation */
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #00c6ff;
-            border-radius: 50%;
-            animation: float 6s infinite linear;
+            color: #009966;
         }
 
         /* Animations */
-        @keyframes glow {
+        @keyframes flicker {
             from {
-                text-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff;
+                opacity: 1;
             }
             to {
-                text-shadow: 0 0 20px #00c6ff, 0 0 30px #00c6ff;
+                opacity: 0.8;
             }
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
             .title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .subtitle {
                 font-size: 1rem;
             }
 
-            .countdown {
-                flex-direction: column;
-            }
-
-            .time {
-                margin-bottom: 15px;
+            .countdown div span {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background Particles -->
+    <!-- Background Animation -->
     <div class="background">
-        <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-        <div class="particle" style="top: 30%; left: 70%; animation-delay: 2s;"></div>
-        <div class="particle" style="top: 60%; left: 40%; animation-delay: 4s;"></div>
-        <div class="particle" style="top: 80%; left: 10%; animation-delay: 6s;"></div>
+        <pre class="matrix">1010101011011010100101001011010101001101010101001001011010101</pre>
+        <pre class="matrix">0101010101001101010101010110101010100110101010101001010101010</pre>
+        <pre class="matrix">1101010101010010101010100101101010101001010101101010101001101</pre>
     </div>
 
-    <!-- Content -->
+    <!-- Main Content -->
     <div class="container">
         <h1 class="title">Roynix</h1>
-        <p class="subtitle">Something Big Is Coming!</p>
-        <div class="surprise">🎉 BIG SURPRISE 🎉</div>
+        <p class="subtitle">The Future of Web, App, AI, and More is Coming Soon!</p>
 
         <!-- Countdown Timer -->
         <div class="countdown" id="countdown">
-            <div class="time">
+            <div>
                 <span id="days">00</span>
-                <p>Days</p>
+                Days
             </div>
-            <div class="time">
+            <div>
                 <span id="hours">00</span>
-                <p>Hours</p>
+                Hours
             </div>
-            <div class="time">
+            <div>
                 <span id="minutes">00</span>
-                <p>Minutes</p>
+                Minutes
             </div>
-            <div class="time">
+            <div>
                 <span id="seconds">00</span>
-                <p>Seconds</p>
+                Seconds
             </div>
         </div>
 
