@@ -3,230 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ROYNIX - Pre-Launching</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Body Styling */
-        body {
-            background: linear-gradient(to right, #1e2022, #283845, #162c39);
-            color: #fff;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        /* Container Styling */
-        .container {
-            max-width: 1000px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 60px;
-            border-radius: 16px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #00ff99;
-            text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
-            animation: glow 1.5s infinite alternate;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #f39c12;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #ddd;
-        }
-
-        /* Countdown Styling */
-        #countdown {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        #countdown div {
-            text-align: center;
-        }
-
-        #countdown span {
-            font-size: 2.5rem;
-            font-weight: bold;
-            display: block;
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
-        }
-
-        /* Social Links */
-        .social-links a {
-            color: #00ff99;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            text-decoration: underline;
-            color: #f39c12;
-        }
-
-        /* Glow Animation */
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
-            }
-            to {
-                text-shadow: 0 0 20px #00ff99, 0 0 40px #00ff99;
-            }
-        }
-
-        /* Floating Particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #00ff99;
-            opacity: 0.7;
-            border-radius: 50%;
-            animation: float 6s infinite ease-in-out;
-        }
-
-        .particle:nth-child(odd) {
-            background: #f39c12;
-        }
-
-        @keyframes float {
-            from {
-                transform: translateY(0) translateX(0);
-                opacity: 0.7;
-            }
-            to {
-                transform: translateY(-100vh) translateX(50px);
-                opacity: 0;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            #countdown span {
-                font-size: 2rem;
-            }
-
-            .social-links a {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <title>Roynix - Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Floating Particles -->
-    <div class="particles">
-        <div class="particle" style="top: 20%; left: 30%; animation-delay: 0s;"></div>
-        <div class="particle" style="top: 50%; left: 70%; animation-delay: 2s;"></div>
-        <div class="particle" style="top: 80%; left: 40%; animation-delay: 4s;"></div>
-        <div class="particle" style="top: 30%; left: 20%; animation-delay: 6s;"></div>
-    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Roynix</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="menu-toggle">☰</div>
+    </nav>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h1>ROYNIX</h1>
-        <h2>Launching date announcement soon</h2>
-        <p>The future of Web, App, and AI Development awaits.</p>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to Roynix</h1>
+        <p>Building the future of Web, App, and AI Development</p>
+        <a href="services.html" class="btn">Explore Services</a>
+    </header>
 
-        <!-- Countdown Timer -->
-        <div id="countdown">
-            <div>
-                <span id="days">00</span>
-                Days
-            </div>
-            <div>
-                <span id="hours">00</span>
-                Hours
-            </div>
-            <div>
-                <span id="minutes">00</span>
-                Minutes
-            </div>
-            <div>
-                <span id="seconds">00</span>
-                Seconds
-            </div>
-        </div>
-
-        <!-- Social Media Links -->
-        <div class="social-links">
-            <a href="tel:+917255071097">📞 +91 7255071097</a> |
-            <a href="mailto:ayushroy0753@gmail.com">📧 Email</a> |
-            <a href="https://instagram.com/ayushroyl" target="_blank">Instagram</a> |
-            <a href="https://facebook.com/ayushroyll" target="_blank">Facebook</a> |
-            <a href="https://twitter.com/ayushroyl" target="_blank">Twitter</a>
-        </div>
-    </div>
-
-    <script>
-        // Countdown Timer
-        const countdown = () => {
-            const launchDate = new Date("2025-02-10T00:00:00").getTime();
-            const now = new Date().getTime();
-            const gap = launchDate - now;
-
-            const second = 1000;
-            const minute = second * 60;
-            const hour = minute * 60;
-            const day = hour * 24;
-
-            const days = Math.floor(gap / day);
-            const hours = Math.floor((gap % day) / hour);
-            const minutes = Math.floor((gap % hour) / minute);
-            const seconds = Math.floor((gap % minute) / second);
-
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours;
-            document.getElementById("minutes").innerText = minutes;
-            document.getElementById("seconds").innerText = seconds;
-
-            if (gap < 0) {
-                document.getElementById("countdown").innerHTML = "<p>🎉 We're Live! 🎉</p>";
-            }
-        };
-
-        setInterval(countdown, 1000);
-    </script>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Roynix. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
